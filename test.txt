@@ -2,7 +2,16 @@
 #include<iostream>
 #include<cstring>
 using namespace std;
-
+class Student{
+private:
+  string name;
+  string gender;
+  int age;
+public:
+  int getage(){
+return this.age;
+}
+}
 class Cd {
 private:
     char performers[50];
@@ -94,38 +103,7 @@ Cd& Cd::operator=(const Cd& d) {//需要非静态函数？----你类中的加个
 
 
 //
-class Classic :public Cd {
-    char performersC[38];
-    char labelC[15];
-    char workC[8];
-    int selectionsC;
-    double playtimeC;
-public:
-    Classic(const char a[], const char b[], const char c[], int d, double e) {
-        int p = 0;
 
-        while (a[p] != '\0') {
-            performersC[p] = a[p];
-            p++;
-        }
-        performersC[p] = '\0'; // 加
-        int l = 0;
-
-        while (b[l] != '\0') {
-            labelC[l] = b[l];
-            l++;
-        }
-        labelC[l] = '\0'; // 加
-        int w = 0;
-        while (c[w] != '\0') {
-            workC[w] = c[w];
-            w++;
-        }
-        workC[w] = '\0'; //加
-        selectionsC = d;
-        playtimeC = e;
-
-    }
     Classic() {}
     virtual void Report() const override { // 改虚函数
         int p = 0;
